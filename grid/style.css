@@ -1,1 +1,10 @@
-*{}
+.container{
+    display: grid;
+    width: 100vw;
+    background-color: red;
+    grid-template-rows: repeat(5, 100px);
+    grid-template-columns: repeat(5, 1fr);
+}
+.item{
+    border: 1px solid greenyellow;
+}
