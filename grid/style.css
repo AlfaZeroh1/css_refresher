@@ -1,16 +1,63 @@
-.container{
-    display: grid;
-    background-color: red;
-    grid-template-columns: repeat(auto-fill, 250px);
-    justify-content: center;
-    gap: 20px;
-    grid-template-rows: repeat(5, 200px);
-    
+main :nth-child(n){
+    border: 1px solid green;
 }
-.item{
-    border: 1px solid greenyellow;
+.header{
+    grid-area: header;
+}
+.feature-yellow{
+    grid-area: fYellow;
+}
+.feature-purple{
+    grid-area: fPurple;
+}
+.feature-red{
+    grid-area: fRed;
+}
+.signup{
+    grid-area: signUp;
+}
+.content{
+    grid-area: dcontent;
+}
+main{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 200px 250px 150px auto;
+    grid-template-areas: 
+    "   header   header   header   "
+    "   fYellow   fPurple   fRed   "
+    "   signUp   signUp   signUp   "
+    "   dcontent   dcontent   dcontent   "
+    
+    ;
+
+}
+@media screen and (max-width: 1023px) {
+    main{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 100px 150px 150px auto;
+        grid-template-areas: 
+        "   header   header    "
+        "   fYellow   fPurple   "
+        "   fRed   signUp   "
+        "   dcontent   dcontent   "
+        
+        ;
+    }
 }
 
-.item1{ grid-area: item1;}
-.item2{ grid-area: item2;}
-.item3{ grid-area: item3;}
+@media screen and (max-width: 800px) {
+    main{
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: 100px 150px 150px 150px 150px auto;
+        grid-template-areas: 
+        "   header   "
+        "   fYellow   "
+        "   fPurple   "
+        "   fRed   "
+        "   signUp   "
+        "   dcontent   "
+        
+        ;
+    }
+}
